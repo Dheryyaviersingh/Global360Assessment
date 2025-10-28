@@ -42,12 +42,12 @@ for (let i = 0; i < count; i++) {
     const editButton = row.locator('a.btn-warning');
 
     if (await editButton.isVisible()) {
-      console.log("✅ Found asset in row:", i);
+      console.log("Found asset in row:", i);
       await editButton.click();
       found = true;
       break;
     } else {
-      console.warn("⚠️ Edit button not found in matched row:", i);
+      console.warn("Edit button not found in matched row:", i);
     }
   }
 }
