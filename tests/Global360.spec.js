@@ -19,7 +19,7 @@ test.describe.serial('Snipe-IT Asset Lifecycle Flow with POM', () => {
     await loginPage.goto();
     await loginPage.login("admin", "password");
     await expect(page).toHaveTitle("Dashboard :: Snipe-IT Asset Management Demo");
-    console.log('✅ Logged in');
+    console.log('Logged in');
   });
 
   test('Create Asset with Unique ID', async () => {
@@ -27,7 +27,7 @@ test.describe.serial('Snipe-IT Asset Lifecycle Flow with POM', () => {
     const date = Date.now();
     Uni = date.toString();
     await assetPage.createAsset(Uni);
-    console.log('✅ Asset created with ID:', Uni);
+    console.log('Asset created with ID:', Uni);
   });
 
   test('Search and Verify Asset in Edit Tab', async () => {
@@ -35,7 +35,7 @@ test.describe.serial('Snipe-IT Asset Lifecycle Flow with POM', () => {
     await assetPage.searchAndEditAsset(Uni);
     const assetId = await assetPage.verifyAssetId(Uni);
     expect(assetId).toBe(Uni);
-    console.log('✅ Verified asset ID:', assetId);
+    console.log('Verified asset ID:', assetId);
   });
 
   test('Verify Asset in History Tab', async () => {
@@ -44,7 +44,7 @@ test.describe.serial('Snipe-IT Asset Lifecycle Flow with POM', () => {
     await expect(historyRow).toContainText('create new');
     await expect(historyRow).toContainText(Uni);
     await expect(historyRow).toContainText('Admin User');
-    console.log('✅ Verified asset in history tab');
+    console.log('Verified asset in history tab');
   });
 
 });
